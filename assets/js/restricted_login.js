@@ -19,4 +19,4 @@ g = global; which is a flag that indicates the regular expression should be test
 function numbersOnly(input) {
   var regex = /[^0-9]/g; //OR could use /\D/
   input.value = input.value.replace(regex, "")
-}
+};
