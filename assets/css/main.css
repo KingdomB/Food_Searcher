@@ -16,3 +16,7 @@
 .section .nutritionVal {
   font-size: 10em;
 }
+
+#mealText {
+  border-radius: 3px;
+}

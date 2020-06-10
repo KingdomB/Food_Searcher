@@ -1,3 +1,13 @@
+require("dotenv").config();
+
+const keys = require("../../keys")
+
+const appId = keys.appId.secret
+
+const appKey = keys.appKey.secret
+
+const pixaApiKey = keys.pixaApiKey.secret
+
 var searchFood;
 
 //displayResults function takes the data response from the ajax call and displays them to the browser page
@@ -28,9 +38,7 @@ $("#runSearch").on("click", function(event) {
 
 
 
-    var queryURL1 = "https://pixabay.com/api/?key=12221937-79ac3e8d889bedf98d3e29f2f&q=" +
-    searchFood +
-    "&per_page=6&image_type=photo";
+    var queryURL1 = `https://pixabay.com/api/?key=${pixaApiKey}=${searchFood}&per_page=6&image_type=photo`;
   
     //API query for food images that correspond to the searchFood input
     $.ajax({
@@ -48,10 +56,7 @@ $("#runSearch").on("click", function(event) {
 
 
   var queryURL2 =
-  "https://api.nutritionix.com/v1_1/search/" +
-  searchFood +
-  "?results=0:1&fields=item_name,nf_calories,nf_total_carbohydrate,nf_protein,nf_sodium&appId=30e01e04&appKey=bf1283fb7b11b7f059bb34d69a04566c";
-
+  `https://api.nutritionix.com/v1_1/search/${searchFood}?results=0:1&fields=item_name,nf_calories,nf_total_carbohydrate,nf_protein,nf_sodium&appId=${appId}&appKey=${appKey}`;
     
   $.ajax({
     url: queryURL2,
