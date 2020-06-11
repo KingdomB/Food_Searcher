@@ -1,12 +1,12 @@
-require("dotenv").config();
+// require("dotenv").config();
 
-const keys = require("../../keys")
+// const keys = require("../../keys")
 
-const appId = keys.appId.secret
+// const appId = keys.appId.secret
 
-const appKey = keys.appKey.secret
+// const appKey = keys.appKey.secret
 
-const pixaApiKey = keys.pixaApiKey.secret
+// const pixaApiKey = keys.pixaApiKey.secret
 
 var searchFood;
 
