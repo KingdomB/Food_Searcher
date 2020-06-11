@@ -32,9 +32,7 @@ $("#runSearch").on("click", function(event) {
 
   event.preventDefault();
 
-  searchFood = $("#mealText")
-    .val()
-    .trim();
+  searchFood = $("#mealText").val().trim();
 
 
 
