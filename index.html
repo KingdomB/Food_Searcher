@@ -1,190 +1,199 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <!--Import Google Icon Font-->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!--Import materialize.css-->
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="assets/css/materialize.min.css"
+      media="screen,projection"
+    />
+    <link type="text/css" rel="stylesheet" href="assets/css/main.css" />
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.8.1/js/all.js"
+      integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      .section .card-image #foodImg {
+        height: 200 pX;
+        width: 100%;
+      }
+    </style>
 
-<head>
-  <!--Import Google Icon Font-->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-  <!--Import materialize.css-->
-  <link type="text/css" rel="stylesheet" href="assets/css/materialize.min.css" media="screen,projection" />
-  <link type="text/css" rel="stylesheet" href="assets/css/main.css" />
-  <script defer src="https://use.fontawesome.com/releases/v5.8.1/js/all.js"
-    integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ"
-    crossorigin="anonymous"></script>
-  <style>
-    .section .card-image #foodImg {
-      height: 200 pX;
-      width: 100%;
-    }
-  </style>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nutrition & Health</title>
+  </head>
 
-  <!--Let browser know website is optimized for mobile-->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nutrition & Health</title>
-</head>
-
-<body id="home" class="scrollspy">
-  <div class="navbar-fixed">
-    <nav class="teal">
-      <div class="container">
-        <div class="nav-wrapper">
-          <a href="#home" class="brand-logo">Food Searcher</a>
-          <a href="#" data-activates="mobile-nav" class="button-collapse">
-            <i class="material-icons">menu</i>
-          </a>
-          <ul class="right hide-on-med-and-down">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#search">Search</a></li>
-            <li><a href="#nutritionVal">Nutritional Value</a></li>
-            <li><a href="#gallery">Photo Gallery</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
+  <body id="home" class="scrollspy">
+    <div class="navbar-fixed">
+      <nav class="teal">
+        <div class="container">
+          <div class="nav-wrapper">
+            <a href="#home" class="brand-logo">Food Searcher</a>
+            <a href="#" data-activates="mobile-nav" class="button-collapse">
+              <i class="material-icons">menu</i>
+            </a>
+            <ul class="right hide-on-med-and-down">
+              <li><a href="#home">Home</a></li>
+              <li><a href="#search">Search</a></li>
+              <li><a href="#nutritionVal">Nutritional Value</a></li>              
+              <li><a href="#gallery">Photo Gallery</a></li>              
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
         </div>
-      </div>
-    </nav>
-  </div>
-  <ul id="mobile-nav" class="side-nav">
-    <li><a href="#home">Home</a></li>
-    <li><a href="#search">Search</a></li>
-    <li><a href="#nutritionVal">Nutritional Value </a></li>
-    <li><a href="#gallery">Photo Gallery</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-
-  <!-- SECTION: SLIDER -->
-  <section class="slider">
-    <ul class="slides">
-      <li>
-        <img src="assets/img/close-up-fish.jpg" alt="" />
-        <div class="caption center-align">
-          <h2 class="white-text text-darken-3">Passion Through Food</h2>
-          <h5 class="white-text text-darken-3 hide-on-small-only">
-            “One cannot think well, love well, sleep well, if one has not dined well.” - Virginia Woolf
-          </h5>
-        </div>
-      </li>
-      <li>
-        <img src="assets/img/appetizer-breakfast.jpg" alt="" />
-        <div class="caption right-align">
-          <h2 class="black-text text-darken-4">Actions Through Food</h2>
-          <h5 class="black-text text-darken-4 hide-on-small-only">
-            “After a good dinner one can forgive anybody, even one's own relations.”
-            ― Oscar Wilde
-          </h5>
-        </div>
-      </li>
-      <li>
-        <img src="assets/img/appetizers-chef.jpg" alt="" />
-        <div class="caption right-align">
-          <h2 class="white-text text-darken-4">Love Through Food</h2>
-          <h5 class="white-text text-darken-4 hide-on-small-only">
-            “I cook with wine, sometimes I even add it to the food.”
-            ― W.C. Fields
-          </h5>
-        </div>
-      </li>
+      </nav>
+    </div>
+    <ul id="mobile-nav" class="side-nav">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#search">Search</a></li>
+      <li><a href="#nutritionVal">Nutritional Value </a></li>
+      <li><a href="#gallery">Photo Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
-  </section>
 
-  <!-- Section: Food Search-->
+    <!-- SECTION: SLIDER -->
+    <section class="slider">
+      <ul class="slides">
+        <li>
+          <img src="assets/img/close-up-fish.jpg" alt="" />
+          <div class="caption center-align">
+            <h2 class="white-text text-darken-3">Passion Through Food</h2>
+            <h5 class="white-text text-darken-3 hide-on-small-only">
+              “One cannot think well, love well, sleep well, if one has not dined well.”        - Virginia Woolf 
+            </h5>            
+          </div>
+        </li>
+        <li>
+          <img src="assets/img/appetizer-breakfast.jpg" alt="" />
+          <div class="caption right-align">
+            <h2 class="black-text text-darken-4">Actions Through Food</h2>
+            <h5 class="black-text text-darken-4 hide-on-small-only">
+              “After a good dinner one can forgive anybody, even one's own relations.”
+―   Oscar Wilde
+            </h5>            
+          </div>
+        </li>
+        <li>
+          <img src="assets/img/appetizers-chef.jpg" alt="" />
+          <div class="caption right-align">
+            <h2 class="white-text text-darken-4">Love Through Food</h2>
+            <h5 class="white-text text-darken-4 hide-on-small-only">
+              “I cook with wine, sometimes I even add it to the food.”
+― W.C. Fields 
+            </h5>            
+          </div>
+        </li>        
+      </ul>
+    </section>
 
-  <section id="search" class="section section-search teal darken-1 white-text center scrollspy">
-    <div class="container">
-      <div class="row">
-        <div class="col s12">
-          <h4>Search Your Favorite Meal</h3>
+    <!-- Section: Food Search-->
+
+    <section id="search" class="section section-search teal darken-1 white-text center scrollspy">
+      <div class="container">
+        <div class="row">
+          <div class="col s12">
+            <h4>Search Your Favorite Meal</h3>
             <h6>Input Your Favorite Meal To Get Its Nutritional Value</h6>
             <div class="input-field">
-              <form>
-                <input id="mealText" class="white black-text " placeholder="Pizza, Lasagna, Fried Fish, (Be Specific).."
-                  type="text" />
-                <button id="runSearch" class="btn btn-large deep-purple waves-effect waves-light" type="submit"
-                  name="action">Submit
-                  <i class="material-icons right">send</i>
-                </button>
-              </form>
-            </div>
+              <input id="mealText"
+                class="white black-text "
+                placeholder="Pizza, Lasagna, Fried Fish, (Be Specific).."
+                type="text"/> 
+                <button id="runSearch" class="btn btn-large deep-purple waves-effect waves-light" type="submit" name="action">Submit
+                    <i class="material-icons right">send</i>
+                  </button>              
+            </div>            
+          </div>
         </div>
       </div>
-    </div>
+      
+    </section>
 
-  </section>
-
-  <!--SECTION: Displaying the values-->
-  <section class="section section-FoodImg grey lighten-4 center">
-    <div class="container">
+    <!--SECTION: Displaying the values-->
+<section class="section section-FoodImg grey lighten-4 center">
+  <div class="container">
       <div class="row">
-        <div class="col s12 m7 offset-m3">
-          <div class="card-panel foodImage card-image">
-            <img id="foodImg" src="assets\img\almonds-berries.jpg">
-            <p>Images By <img id="pixabayLogo" src="assets/img/pixabay_logo.png"></p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section id="nutritionVal" class="section section-icons grey lighten-4 center scrollspy">
-    <div class="container">
-
-      <div class="row">
-        <div class="col s12 m4">
-          <div class="card-panel nutritionVal">
-
-            <h5 class="flow-text"><u>Nutritional Values</u></h5>
-            <h5 class="flow-text" id="servId">Your Meal</h5>
-
-            <h5 class="flow-text" id="calories">
-              Calories: 0 kcal
-            </h5>
-            <h5 class="flow-text" id="carbs">Carbohydrates: 0 g</h5>
-            <h5 class="flow-text" id="sodium">Sodium: 0 mg</h5>
-            <h5 class="flow-text" id="protein">Proteins: 0 g</h5>
-
-          </div>
-        </div>
-        <div class="col s12 m4">
-          <div class="card-panel">
-
-            <h4 class="flow-text"><u>Activities</u></h4>
-            <p class="flow-text">
-              Input your information for a custom plan
-            </p>
-
-            <!-- SECTION: Inputing The Information For Calculation-->
-            <form id="weightAgeSex" autocomplete="off">
-              <div class="input-field">
-                <input type="text" id="userName" onkeyup="numbersOnly(this)" />
-                <label for="userName">Height</label>
-              </div>
-              <div class="input-field">
-                <input type="text" id="userWeight" onkeyup="numbersOnly(this)" />
-                <label for="userWeight">Weight</label>
-              </div>
-            </form>
-          </div>
-
-        </div>
-        <!-- SECTION Google Map and ZIP CODE-->
-        <div id="gymFinder" class="col s12 m4">
-          <div class="card">
-            <div class="card-content">
-              <h3> <span class="card-title"><u>Let's Get Healthy</u></span></h3>
-              <p style="font-size:20px">Please enter your zip code for a map of work-out places in your area. </p>
-              <div class="input-field">
-                <input onkeyup="numbersOnly(this)" type="text" id="userZip" />
-                <label for="userZip">Zip Code </label>
-              </div>
-
-            </div>
-            <div id="gymFind" class="card-action">
-              <a href="#mapmodal" class=" btn waves-effect waves-light modal-trigger">Find A Gym</a>
+          <div class="col s12 m7 offset-m3">
+            <div class="card-panel foodImage card-image" >
+                <img   id="foodImg" src="assets\img\almonds-berries.jpg">
+                <p>Images By <img   id="pixabayLogo" src="assets/img/pixabay_logo.png"></p>
             </div>
           </div>
         </div>
+  </div>
+</section>
+    <section  id="nutritionVal" class="section section-icons grey lighten-4 center scrollspy">
+      <div class="container">
+        
+        <div class="row">
+          <div class="col s12 m4">
+            <div class="card-panel nutritionVal">
+              
+              <h5 class="flow-text"><u>Nutritional Values</u></h5> 
+              <h5 class="flow-text" id="servId">Your Meal</h5> 
+                         
+              <h5 class="flow-text" id="calories">
+                Calories: 0 kcal
+              </h5>
+              <h5 class="flow-text" id="carbs">Carbohydrates: 0 g</h5>
+              <h5 class="flow-text" id="sodium">Sodium: 0 mg</h5>
+              <h5 class="flow-text" id="protein">Proteins: 0 g</h5>
 
+            </div>
+          </div>
+          <div class="col s12 m4">
+            <div class="card-panel">
+              
+              <h4 class="flow-text"><u>Activities</u></h4>
+              <p class="flow-text">
+                Input your information for a custom plan
+              </p>
+              
+              <!-- SECTION: Inputing The Information For Calculation-->
+              <form id="weightAgeSex" autocomplete="off">
+                      <div class="input-field">
+                        <input type="text" id="userName" onkeyup="numbersOnly(this)"/>
+                        <label for="userName">Height</label>
+                      </div>
+                      <div class="input-field">
+                        <input type="text" id="userWeight" onkeyup="numbersOnly(this)"/>
+                        <label for="userWeight">Weight</label>
+                      </div>         
+                      </form>
+                 </div>
+
+          </div>
+          <!-- SECTION Google Map and ZIP CODE-->
+          <div id="gymFinder"  class="col s12 m4">
+              <div class="card">
+                  <div class="card-content">
+                      <h3> <span class="card-title"><u>Let's Get Healthy</u></span></h3>
+                      <p style="font-size:20px">Please enter your zip code for a map of work-out places in your area. </p>
+                      <div class="input-field">
+                          <input onkeyup="numbersOnly(this)" type="text" id="userZip" />
+                          <label for="userZip">Zip Code </label>
+                        </div>
+
+                  </div>
+                  <div id="gymFind" class="card-action">
+                    <a href="#mapmodal" class=" btn waves-effect waves-light modal-trigger">Find A Gym</a>
+                  </div>
+                </div>
+            </div>
+            
+          </div>
+        </div>        
       </div>
-    </div>
-    </div>
-    <!-- SECTION: Buttons For Excercises-->
+<!-- SECTION: Buttons For Excercises-->
 
     <!-- Div that will hold the activities required to lose target calories -->
     <div id="gamePlan"></div>
@@ -195,187 +204,217 @@
     <!-- Takes user's zipcode input -->
     <div id='gymFinder'>
 
-      <ol id='gymList'></ol>
+    <ol id='gymList'></ol>
     </div>
-    <div class="row">
-      <div class="col s12">
-        <button class="exerBtn btn" id="swimming" data-name="swim"> <a href="#swim-modal"
-            class="modal-trigger white-text "><i class="fas fa-swimmer"></i> Swimming</a></button>
-        <button class="exerBtn btn" id="jogging" data-name="jog"><a href="#jog-modal"
-            class="white-text modal-trigger"><i class="fas fa-running"></i> Jogging</a></button>
-        <button class="exerBtn btn" id="biking" data-name="bike"><a href="#bike-modal"
-            class="white-text modal-trigger"><i class="fas fa-bicycle"></i> Biking</a></button>
-      </div>
-    </div>
-  </section>
-
-
-
-
-  <!-- SECTION: Photo Gallery-->
-
-  <section id="gallery" class="section section-gallery scrollspy">
-    <div class="container">
-      <h4 class="center"><span class="teal-text">Photo </span> Gallery</h4>
       <div class="row">
-        <div class="col s12 m3">
-          <img class="materialboxed responsive-img" src="https://source.unsplash.com/1600x900/?pizza" alt="" />
-        </div>
-        <div class="col s12 m3">
-          <img class="materialboxed responsive-img" src="https://source.unsplash.com/1600x900/?fruit" alt="" />
-        </div>
-        <div class="col s12 m3">
-          <img class="materialboxed responsive-img" src="https://source.unsplash.com/1600x900/?steak" alt="" />
-        </div>
-        <div class="col s12 m3">
-          <img class="materialboxed responsive-img" src="https://source.unsplash.com/1600x900/?food" alt="" />
+        <div class="col s12" >
+           <button class="exerBtn btn" id ="swimming" data-name="swim"> <a href="#swim-modal" class="modal-trigger white-text " ><i class="fas fa-swimmer"></i> Swimming</a></button>
+           <button class="exerBtn btn" id ="jogging" data-name="jog"><a href="#jog-modal" class="white-text modal-trigger" ><i class="fas fa-running"></i> Jogging</a></button>
+           <button class="exerBtn btn" id ="biking" data-name="bike"><a href="#bike-modal" class="white-text modal-trigger" ><i class="fas fa-bicycle"></i> Biking</a></button>
         </div>
       </div>
-      <div class="row">
-        <div class="col s12 m3">
-          <img class="materialboxed responsive-img" src="https://source.unsplash.com/1600x900/?salad" alt="" />
-        </div>
-        <div class="col s12 m3">
-          <img class="materialboxed responsive-img" src="https://source.unsplash.com/1600x900/?drinks" alt="" />
-        </div>
-        <div class="col s12 m3">
-          <img class="materialboxed responsive-img" src="https://source.unsplash.com/1600x900/?eggs" alt="" />
-        </div>
-        <div class="col s12 m3">
-          <img class="materialboxed responsive-img" src="https://source.unsplash.com/1600x900/?bacon" alt="" />
-        </div>
-      </div>
+    </section>
 
-    </div>
-  </section>
+    
 
-  <!-- SECTION: Contact-->
-  <section id="contact" class="section section-contact scrollspy">
-    <div class="container">
-      <div class="row">
-        <div class="col s12 m6">
-          <div class="card-panel teal white-text center">
-            <i class="material-icons medium">email</i>
-            <h5>Contact Us For More Info</h5>
-            <p>
-              Please fill out the form for more information and you can recieve our monthly newsletter regarding
-              nutrition and healthy living.
-            </p>
+    
+    <!-- SECTION: Photo Gallery-->
+
+    <section  id="gallery" class="section section-gallery scrollspy">      
+      <div class="container">
+        <h4 class="center"><span class="teal-text">Photo </span> Gallery</h4>
+        <div class="row">
+          <div class="col s12 m3">
+            <img
+              class="materialboxed responsive-img"
+              src="https://source.unsplash.com/1600x900/?pizza"
+              alt=""
+            />
           </div>
-          <ul class="collection with-header">
-            <li class="collection-header">
-              <h4><i class="fa fa-location-arrow" aria-hidden="true"></i> Our Address</h4>
-            </li>
-            <li class="collection-item">Food Searcher</li>
-            <li class="collection-item">800 Spring St NW</li>
-            <li class="collection-item"> Atlanta, GA 30308</li>
-          </ul>
-        </div>
-        <div class="col s12 m6">
-          <div class="card-panel grey lighten-3">
-            <h5>Please Fill Out This Form</h5>
-            <div class="input-field">
-              <input type="text" id="name" />
-              <label for="name">Name</label>
-            </div>
-            <div class="input-field">
-              <input type="email" id="email" />
-              <label for="email">Email</label>
-            </div>
-            <div class="input-field">
-              <input type="text" id="phone" />
-              <label for="phone">Phone</label>
-            </div>
-            <div class="input-field">
-              <textarea class="materialize-textarea" id="message"></textarea>
-              <label for="message">Message</label>
-            </div>
-            <input type="submit" id="contactSubmit" value="submit" class="btn">
+          <div class="col s12 m3">
+            <img
+              class="materialboxed responsive-img"
+              src="https://source.unsplash.com/1600x900/?fruit"
+              alt=""
+            />
+          </div>
+          <div class="col s12 m3">
+            <img
+              class="materialboxed responsive-img"
+              src="https://source.unsplash.com/1600x900/?steak"
+              alt=""
+            />
+          </div>
+          <div class="col s12 m3">
+            <img
+              class="materialboxed responsive-img"
+              src="https://source.unsplash.com/1600x900/?food"
+              alt=""
+            />
           </div>
         </div>
+        <div class="row">
+          <div class="col s12 m3">
+            <img
+              class="materialboxed responsive-img"
+              src="https://source.unsplash.com/1600x900/?salad"
+              alt=""
+            />
+          </div>
+          <div class="col s12 m3">
+            <img
+              class="materialboxed responsive-img"
+              src="https://source.unsplash.com/1600x900/?drinks"
+              alt=""
+            />
+          </div>
+          <div class="col s12 m3">
+            <img
+              class="materialboxed responsive-img"
+              src="https://source.unsplash.com/1600x900/?eggs"
+              alt=""
+            />
+          </div>
+          <div class="col s12 m3">
+            <img
+              class="materialboxed responsive-img"
+              src="https://source.unsplash.com/1600x900/?bacon"
+              alt=""
+            />
+          </div>
+        </div>
+      
       </div>
-    </div>
-    </div>
-  </section>
+    </section>    
+
+    <!-- SECTION: Contact-->
+    <section  id="contact" class="section section-contact scrollspy">
+      <div class="container">
+        <div class="row">
+          <div class="col s12 m6">
+            <div class="card-panel teal white-text center">
+              <i class="material-icons medium">email</i>
+              <h5>Contact Us For More Info</h5>
+              <p>
+                Please fill out the form for more information and you can recieve our monthly newsletter regarding nutrition and healthy living.
+              </p>
+            </div>
+            <ul class="collection with-header">
+              <li class="collection-header">
+                <h4><i class="fa fa-location-arrow" aria-hidden="true"></i>  Our Address</h4>
+              </li>
+              <li class="collection-item">Food Searcher</li>
+              <li class="collection-item">800 Spring St NW</li>
+              <li class="collection-item"> Atlanta, GA 30308</li>
+            </ul>
+          </div>
+          <div class="col s12 m6">
+            <div class="card-panel grey lighten-3">
+              <h5>Please Fill Out This Form</h5>
+              <div class="input-field">
+                <input type="text"  id="name" />
+                <label for="name">Name</label>
+              </div>
+              <div class="input-field">
+                  <input type="email"  id="email" />
+                  <label for="email">Email</label>
+                </div>
+                <div class="input-field">
+                    <input type="text"  id="phone" />
+                    <label for="phone">Phone</label>
+                  </div>
+                  <div class="input-field">
+                      <textarea class="materialize-textarea"  id="message" ></textarea>
+                      <label for="message">Message</label>
+                    </div>
+                    <input type="submit" id="contactSubmit" value="submit" class="btn">
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>  
 
 
-  <!-- SECTION: MODALS-->
+    <!-- SECTION: MODALS-->
 
-  <div id="swim-modal" class="modal ">
-    <div class="modal-content">
-      <h4>Swimming to Burn The Calories</h4>
-      <p class="gamePlan">In order to burn the amount of calories you have consumed by eating this meal, you have to
-        swim at a relaxed pace for - minutes</p>
-    </div>
-  </div>
-  <div id="jog-modal" class="modal ">
-    <div class="modal-content">
-      <h4>Jogging to Burn The Calories</h4>
-      <p class="gamePlan">In order to burn the amount of calories you have consumed by eating this meal, you have to jog
-        at a relaxed pace for - minutes</p>
-    </div>
-  </div>
-  <div id="bike-modal" class="modal ">
-    <div class="modal-content">
-      <h4>Riding a Bike to Burn The Calories</h4>
-      <p class="gamePlan">In order to burn the amount of calories you have consumed by eating this meal, you have to
-        ride your bike at a relaxed pace for - minutes</p>
-    </div>
-  </div>
+    <div id="swim-modal" class="modal ">
+        <div class="modal-content">          
+          <h4 >Swimming to Burn The Calories</h4>      
+          <p class="gamePlan">In order to burn the amount of calories you have consumed by eating this meal, you have to swim at a relaxed pace for - minutes</p>         
+        </div>        
+      </div>    
+      <div id="jog-modal" class="modal ">
+          <div class="modal-content">
+            <h4>Jogging to Burn The Calories</h4>
+            <p class="gamePlan">In order to burn the amount of calories you have consumed by eating this meal, you have to jog at a relaxed pace for - minutes</p>         
+          </div>        
+        </div>
+        <div id="bike-modal" class="modal ">
+            <div class="modal-content">
+              <h4>Riding a Bike to Burn The Calories</h4>
+              <p class="gamePlan">In order to burn the amount of calories you have consumed by eating this meal, you have to ride your bike at a relaxed pace for - minutes</p>         
+            </div>        
+          </div>
 
-  <div id="mapmodal" class="modal modal-fixed-footer">
-    <div class="modal-content">
-      <div id="googleMap" style="width:100%;height:100%;"></div>
-    </div>
-    <div class="modal-footer">
-      <a href="#" class="teal modal-action modal-close waves-effect waves-green btn">Close</a>
-    </div>
-  </div>
+          <div id="mapmodal" class="modal modal-fixed-footer">
+              <div class="modal-content">
+                  <div id="googleMap" style="width:100%;height:100%;"></div>
+              </div>
+              <div class="modal-footer">
+                  <a href="#" class="teal modal-action modal-close waves-effect waves-green btn">Close</a>
+              </div>
+          </div>
 
-  <!-- SECTION: Footer-->
+           <!-- SECTION: Footer-->
 
-  <section class="section teal darken-2 white-text  ">
-    <div class="container">
-      Food Searcher&copy; 2019
-      <a class="grey-text text-lighten-4 right" href="#!">Created by King Major</a>
-    </div>
-  </section>
+    <section class="section teal darken-2 white-text  ">
+      <div class="container">
+        Food Searcher&copy; 2019
+      <a class="grey-text text-lighten-4 right" href="#!">Created by King Major</a>  
+    </div> 
+    </section>
 
-  <!--Import jQuery before materialize.js-->
-  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
-  <script type="text/javascript" src="assets/js/materialize.min.js"></script>
+    <!--Import jQuery before materialize.js-->
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-3.2.1.min.js"
+    ></script>
+    <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
+    <script type="text/javascript" src="assets/js/materialize.min.js"></script>
   <!--Import ajax, apis, and links to JS codes -->
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.slim.min.js"></script> -->
-
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLMuYfFilr8RmhGeZEExjIb4HIZAlXd54&callback=initMap"
-    async defer></script>
-  <script src="./assets/js/firebase.js"></script>
-  <script src="./assets/js/googlemap.js"></script>
-  <script src="./assets/js/search.js"></script>
-  <script src="./assets/js/restricted_login.js"></script>
-  <script>
-    $(document).ready(function () {
-      // Custom JS & jQuery here
-      // INIT SIDENAVE
-      $('.button-collapse').sideNav();
-      // INIT SLIDER
-      $('.slider').slider({
-        indicators: false,
-        height: 300,
-        transition: 700,
-        interval: 6000
+   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.slim.min.js"></script> -->
+    
+     <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLMuYfFilr8RmhGeZEExjIb4HIZAlXd54&callback=initMap"
+      async
+      defer
+    ></script>
+    <script src="./assets/js/firebase.js"></script>
+    <script src="./assets/js/googlemap.js"></script>
+    <script src="./assets/js/search.js"></script>
+    <script src="./assets/js/restricted_login.js"></script>
+    <script>
+      $(document).ready(function() {
+        // Custom JS & jQuery here
+        // INIT SIDENAVE
+        $('.button-collapse').sideNav();
+        // INIT SLIDER
+        $('.slider').slider({
+          indicators: false,
+          height: 300,
+          transition: 700,
+          interval: 6000
+        });
+        
+        
+        //INIT SCROLLSPY
+        $('.scrollspy').scrollSpy();
+        // INIT SELECT MENU
+        $('select').material_select();
+        //INIT MODALS
+        $('.modal').modal();
       });
-
-
-      //INIT SCROLLSPY
-      $('.scrollspy').scrollSpy();
-      // INIT SELECT MENU
-      $('select').material_select();
-      //INIT MODALS
-      $('.modal').modal();
-    });
-  </script>
-</body>
-
+    </script>
+  </body>
 </html>

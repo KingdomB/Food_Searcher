@@ -38,7 +38,7 @@ $("#runSearch").on("click", function(event) {
 
 
 
-    var queryURL1 = `https://pixabay.com/api/?key=12221937-79ac3e8d889bedf98d3e29f2f&q=${searchFood}&per_page=6&image_type=photo`;
+    var queryURL1 = `https://pixabay.com/api/?key=16990785-4d754fb8cb5ee04b57ce7de21&q=${searchFood}&per_page=6&image_type=photo`;
   
     //API query for food images that correspond to the searchFood input
     $.ajax({
