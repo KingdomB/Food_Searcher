@@ -38,7 +38,7 @@ $("#runSearch").on("click", function(event) {
 
 
 
-    var queryURL1 = `https://pixabay.com/api/?key=${pixaApiKey}=${searchFood}&per_page=6&image_type=photo`;
+    var queryURL1 = `https://pixabay.com/api/?key=12221937-79ac3e8d889bedf98d3e29f2f&q=${searchFood}&per_page=6&image_type=photo`;
   
     //API query for food images that correspond to the searchFood input
     $.ajax({
@@ -56,7 +56,7 @@ $("#runSearch").on("click", function(event) {
 
 
   var queryURL2 =
-  `https://api.nutritionix.com/v1_1/search/${searchFood}?results=0:1&fields=item_name,nf_calories,nf_total_carbohydrate,nf_protein,nf_sodium&appId=${appId}&appKey=${appKey}`;
+  `https://api.nutritionix.com/v1_1/search/${searchFood}?results=0:1&fields=item_name,nf_calories,nf_total_carbohydrate,nf_protein,nf_sodium&appId=30e01e04&appKey=2b0d061b096ad6690476dce8d458d834`;
     
   $.ajax({
     url: queryURL2,
