@@ -46,7 +46,7 @@ function initMap (locationLatitude, locationLongitude, gymCoordinates) {
   }
 }
 
-const apiKey = '&key=AIzaSyDj1qyMjs27r682MYzYiyUVAVOYjyuqieQ'
+const apiKey = '&key=AIzaSyAtCI_REo0V7u7mRhsLxjGzZu0zZ-TY77k'
 
 const searchButton = document.getElementById('gymFind')
 
