@@ -20,7 +20,7 @@ function initMap (locationLatitude, locationLongitude, gymCoordinates) {
   })
 
   // const coordinates = gymCoordinates
-  for (let i = 0; i < gymCoordinates.length; ++i) {
+  for (let i = 0; i < gymCoordinates.length; i++) {
     addMarker(gymCoordinates[i])
   }
 
@@ -46,7 +46,7 @@ function initMap (locationLatitude, locationLongitude, gymCoordinates) {
   }
 }
 
-const apiKey = '&key=AIzaSyAtCI_REo0V7u7mRhsLxjGzZu0zZ-TY77k'
+const apiKey = '&key=AIzaSyCR9kjgT9bBFZyVp5hSkVh_AJGF6VoqcWA'
 
 const searchButton = document.getElementById('gymFind')
 
@@ -63,7 +63,6 @@ searchButton.addEventListener('click', async function (e) {
     .catch(error => console.error({ error }))
 
   const data1 = await res.json()
-
   const googleGeocodeLat = data1.results[0].geometry.location.lat
   const googleGeocodeLng = data1.results[0].geometry.location.lng
 
@@ -91,6 +90,8 @@ searchButton.addEventListener('click', async function (e) {
       placesDataLocations.push({ gym: gym })
     }
   }
+
+  console.log(placesDataLocations);
   initMap(googleGeocodeLat, googleGeocodeLng, placesDataLocations)
 })
 
