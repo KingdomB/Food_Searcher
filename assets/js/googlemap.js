@@ -90,8 +90,7 @@ searchButton.addEventListener('click', async function (e) {
       placesDataLocations.push({ gym: gym })
     }
   }
-
-  console.log(placesDataLocations);
+debugger;
   initMap(googleGeocodeLat, googleGeocodeLng, placesDataLocations)
 })
 
