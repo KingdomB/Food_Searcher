@@ -1,109 +1,103 @@
-var corsProxy = "https://cors-anywhere.herokuapp.com/";
-
-var mapCenter = { lat: 33.749, lng: -84.388 };
-var map;
-var infowindow;
+const mapModal = document.querySelector('#googleMap')
+const originalMapContent = mapModal.innerHTML
 
 // displaying the map
-function initMap() {
-  infowindow = new google.maps.InfoWindow();
-  map = new google.maps.Map(document.getElementById("googleMap"), {
-    center: mapCenter,
-    zoom: 12
-  });
+function initMap (locationLatitude, locationLongitude, gymCoordinates) {
+  // Map options
+  const options = {
+    center: { lat: locationLatitude, lng: locationLongitude },
+    zoom: 10
+  }
+
+  // New map
+  const map = new google.maps.Map(document.getElementById('googleMap'), options)
+
+  // Add markers
+  const marker = new google.maps.Marker({
+    position: { lat: locationLatitude, lng: locationLongitude },
+    map: map
+  // icon: '...'
+  })
+
+  // const coordinates = gymCoordinates
+  for (let i = 0; i < gymCoordinates.length; ++i) {
+    addMarker(gymCoordinates[i])
+  }
+
+  // Add marker function - displays multiple different markers
+  function addMarker (loopData) {
+    const marker = new google.maps.Marker({
+      position: loopData.gym.location,
+      map: map,
+      icon: 'https://img.icons8.com/offices/2x/map-pin.png'
+    })
+
+    // Add infoWindow
+    const infoWindowContent = `<h6>${loopData.gym.name}</h6><div>${loopData.gym.address}</div>`
+    const infoWindow = new google.maps.InfoWindow({
+
+      content: infoWindowContent
+    })
+
+    // Function required to display the info window on map
+    marker.addListener('click', () => {
+      infoWindow.open(map, marker)
+    })
+  }
 }
 
-// $(document).ready(function() {
-//   $('.modal-trigger').leanModal({
-//     ready: function() {
-//       var map = document.getElementById('googleMap');
-//       google.maps.event.trigger(map, 'resize');
-//     }
-//   });
-// });
+const apiKey = '&key=AIzaSyDj1qyMjs27r682MYzYiyUVAVOYjyuqieQ'
 
-function getLatLng(e) {
-  e.preventDefault();
+const searchButton = document.getElementById('gymFind')
 
-  var api = "https://maps.googleapis.com/maps/api/geocode/json?address=";
-  var zipcode = $("#userZip") // getting the zipcode input
-    .val()
-    .trim();
-  var apiKey = "&key=AIzaSyCLMuYfFilr8RmhGeZEExjIb4HIZAlXd54";
+searchButton.addEventListener('click', async function (e) {
+  e.preventDefault()
+  mapModal.innerHTML = '<img style="position: absolute; display:block; top: 50%; transform: translateY(-50%); left: 0; right: 0; margin: auto; width: 30%;" src="./assets/img/loading_image.gif" alt="Your map is on the way!">'
 
-  const queryURL2 = api + zipcode + apiKey;
+  // getting the zip code input
+  const zipCode = document.querySelector('#userZip').value.trim()
+  const googleGeocodeAPI = `https://maps.googleapis.com/maps/api/geocode/json?address=${zipCode},US${apiKey}`
 
-  // call to API that displays zipcode input on map
-  $.ajax({
-    url: queryURL2,
-    method: "GET"
-  }).then(function(response) {
-    var lat = response.results[0].geometry.location.lat;
-    var lng = response.results[0].geometry.location.lng;
+  // call to API to grab latitude and longitude from the zip code user input
+  const res = await fetch(googleGeocodeAPI)
+    .catch(error => console.error({ error }))
 
-    mapCenter = response.results[0].geometry.location;
-    gymLocator(e, lat, lng);
-    initMap();
-  });
-}
+  const data1 = await res.json()
 
-function gymLocator(e, lat, lng) {
-  e.preventDefault();
+  const googleGeocodeLat = data1.results[0].geometry.location.lat
+  const googleGeocodeLng = data1.results[0].geometry.location.lng
 
-  var api2 =
-    //try without cors proxy first before sending to github
-    corsProxy +
-    "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=";
+  // Google Places API requires Proxy server header to enable cross-origin-resource-sharing (CORS)
+  var corsProxy = 'https://cors-anywhere.herokuapp.com/'
 
-  var searchParameters = "&radius=15000&type=gym";
-  var apiKey = "&key=AIzaSyCLMuYfFilr8RmhGeZEExjIb4HIZAlXd54";
+  const googlePlacesAPI = `${corsProxy}https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${googleGeocodeLat},${googleGeocodeLng}&radius=4500&type=gym&keyword=exercise${apiKey}`
 
-  const queryURL3 = api2 + lat + "," + lng + searchParameters + apiKey;
-  // console.log(queryURL3);
+  // call to API where list of gyms is generated using latitude and longitude of zip code
+  const res2 = await fetch(googlePlacesAPI)
+    .catch(error => console.error({ error }))
 
-  // call to API where list of gyms is generated from zipcode input
-  $.ajax({
-    url: queryURL3,
-    method: "GET",
-    dataType: "json"
-  }).then(function(response2) {
-    console.log("list of gyms", response2);
+  const placesData = await res2.json()
 
-    for (i = 0; i < 10; i++) {
-      createMarker(response2.results[i]);
+  // Creating new array to hold new gym data objects
+  const placesDataLocations = []
 
-      // using template literal with this list
-      // var gym = `<li>
-      //               <p>${response2.results[i].name}</p>
-      //               <p>${response2.results[i].vicinity}</p>
-      //             </li>`;
-      // $("#gymList").append(gym);
-      // this list shows the gym name and address in another div ^
+  for (let i = 0; i < placesData.results.length; i++) {
+    if (placesData.results[i].business_status === 'OPERATIONAL') {
+      const gym = {
+        location: placesData.results[i].geometry.location,
+        name: placesData.results[i].name,
+        address: placesData.results[i].vicinity
+      }
+      placesDataLocations.push({ gym: gym })
     }
+  }
+  initMap(googleGeocodeLat, googleGeocodeLng, placesDataLocations)
+})
 
-    // initMap(); <--commented this out because the markers would not appear
-  });
-}
+const modalCloseButton = document.querySelector('#modal-close-button')
 
-function createMarker(place) {
-  console.log("map2: ", map);
-
-  var marker = new google.maps.Marker({
-    map: map,
-    position: place.geometry.location
-  });
-  // console.log(marker);
-
-  var content = `
-  <h5>${place.name}</h5> 
-  <p>${place.vicinity}</p> 
-  `;
-    // using template literal (ES6) ^
-
-  google.maps.event.addListener(marker, "click", function() {
-    infowindow.setContent(content);
-    infowindow.open(map, this);
-  });
-}
-
-$('#gymFind').on('click', getLatLng);
+// clearing the contents of the map modal on close to prepare for the next query
+modalCloseButton.addEventListener('click', function (e) {
+  e.preventDefault()
+  mapModal.innerHTML = originalMapContent
+})
