@@ -52,6 +52,7 @@ const searchButton = document.getElementById('gymFind')
 
 searchButton.addEventListener('click', async function (e) {
   e.preventDefault()
+  // Displaying the map loading GIF image
   mapModal.innerHTML = '<img style="position: absolute; display:block; top: 50%; transform: translateY(-50%); left: 0; right: 0; margin: auto; width: 30%;" src="./assets/img/loading_image.gif" alt="Your map is on the way!">'
 
   // getting the zip code input
@@ -90,14 +91,16 @@ searchButton.addEventListener('click', async function (e) {
       placesDataLocations.push({ gym: gym })
     }
   }
-debugger;
+
   initMap(googleGeocodeLat, googleGeocodeLng, placesDataLocations)
 })
 
+// clearing the contents of the map modal on close to prepare for the next query
 const modalCloseButton = document.querySelector('#modal-close-button')
 
-// clearing the contents of the map modal on close to prepare for the next query
 modalCloseButton.addEventListener('click', function (e) {
   e.preventDefault()
+  // clearing the contents of the zip code search box to prepare for the next query
+  document.getElementById('userZip').value = ''
   mapModal.innerHTML = originalMapContent
 })
