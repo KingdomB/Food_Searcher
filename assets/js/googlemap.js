@@ -9,7 +9,6 @@ let bounds
 let infoWindow
 let currentInfoWindow
 let service
-let infoPane
 
 const searchButton = document.getElementById('gymFind')
 
@@ -23,8 +22,6 @@ searchButton.addEventListener('click', function (e) {
     bounds = new google.maps.LatLngBounds()
     infoWindow = new google.maps.InfoWindow()
     currentInfoWindow = infoWindow
-
-    infoPane = document.getElementById('panel')
 
     // Try HTML5 geolocation
     if (navigator.geolocation) {
@@ -114,8 +111,8 @@ searchButton.addEventListener('click', function (e) {
         }
 
         /* Only fetch the details of a place when the user clicks on a marker.
-    * If we fetch the details for all place results as soon as we get
-    * the search response, we will hit API rate limits. */
+           If we fetch the details for all place results as soon as we get
+           the search response, we will hit API rate limits. */
         service.getDetails(request, (placeResult, status) => {
           showDetails(placeResult, marker, status)
         })
@@ -124,7 +121,7 @@ searchButton.addEventListener('click', function (e) {
       bounds.extend(place.geometry.location)
     })
     /* Once all the markers have been placed, adjust the bounds of the map to
-         * show all the markers within the visible area. */
+       show all the markers within the visible area. */
     map.fitBounds(bounds)
   }
 
@@ -134,74 +131,16 @@ searchButton.addEventListener('click', function (e) {
       const placeInfowindow = new google.maps.InfoWindow()
       let rating = 'None'
       if (placeResult.rating) rating = placeResult.rating
-      placeInfowindow.setContent('<div><strong>' + placeResult.name +
-          '</strong><br>' + 'Rating: ' + rating + '</div>')
+      placeInfowindow.setContent('<div><strong>' + placeResult.name + '</strong><br>' + 
+      'Rating: ' + rating + '<br>' + 
+      placeResult.formatted_address + '<br>' + 
+      '<a target="_blank" href=' + placeResult.website + '>Website</a></div>')
       placeInfowindow.open(marker.map, marker)
       currentInfoWindow.close()
       currentInfoWindow = placeInfowindow
-      showPanel(placeResult)
     } else {
       console.log('showDetails failed: ' + status)
     }
-  }
-
-  // Displays place details in a sidebar
-  function showPanel (placeResult) {
-    // If infoPane is already open, close it
-    if (infoPane.classList.contains('open')) {
-      infoPane.classList.remove('open')
-    }
-
-    // Clear the previous details
-    while (infoPane.lastChild) {
-      infoPane.removeChild(infoPane.lastChild)
-    }
-
-    // Add the primary photo, if there is one
-    if (placeResult.photos != null) {
-      const firstPhoto = placeResult.photos[0]
-      const photo = document.createElement('img')
-      photo.classList.add('hero')
-      photo.src = firstPhoto.getUrl()
-      infoPane.appendChild(photo)
-    }
-    // Add the primary photo, if there is one
-    if (placeResult.photos) {
-      const firstPhoto = placeResult.photos[0]
-      const photo = document.createElement('img')
-      photo.classList.add('hero')
-      photo.src = firstPhoto.getUrl()
-      infoPane.appendChild(photo)
-    }
-
-    // Add place details with text formatting
-    const name = document.createElement('h1')
-    name.classList.add('place')
-    name.textContent = placeResult.name
-    infoPane.appendChild(name)
-    if (placeResult.rating) {
-      const rating = document.createElement('p')
-      rating.classList.add('details')
-      rating.textContent = `Rating: ${placeResult.rating} \u272e`
-      infoPane.appendChild(rating)
-    }
-    const address = document.createElement('p')
-    address.classList.add('details')
-    address.textContent = placeResult.formatted_address
-    infoPane.appendChild(address)
-    if (placeResult.website) {
-      const websitePara = document.createElement('p')
-      const websiteLink = document.createElement('a')
-      const websiteUrl = document.createTextNode(placeResult.website)
-      websiteLink.appendChild(websiteUrl)
-      websiteLink.title = placeResult.website
-      websiteLink.href = placeResult.website
-      websitePara.appendChild(websiteLink)
-      infoPane.appendChild(websitePara)
-    }
-
-    // Open the infoPane
-    infoPane.classList.add('open')
   }
 })
 
