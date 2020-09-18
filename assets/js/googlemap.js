@@ -24,6 +24,8 @@ searchButton.addEventListener('click', function (e) {
     infoWindow = new google.maps.InfoWindow()
     currentInfoWindow = infoWindow
 
+    infoPane = document.getElementById('panel')
+
     // Try HTML5 geolocation
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(position => {
@@ -92,7 +94,6 @@ searchButton.addEventListener('click', function (e) {
   function nearbyCallback (results, status) {
     if (status == google.maps.places.PlacesServiceStatus.OK) {
       createMarkers(results)
-      console.log(results)
     }
   }
 
