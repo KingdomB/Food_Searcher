@@ -59,8 +59,8 @@ searchButton.addEventListener('click', function (e) {
 
   // Handle a geolocation error
   function handleLocationError (browserHasGeolocation, infoWindow) {
-    // Set default location to Sydney, Australia
-    pos = { lat: -33.856, lng: 151.215 }
+    // Set default location to Atlanta, Georgia
+    pos = { lat: 33.7490, lng: 84.3880 }
     map = new google.maps.Map(document.getElementById('googleMap'), {
       center: pos,
       zoom: 15
